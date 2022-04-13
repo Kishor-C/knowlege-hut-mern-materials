@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registration Form!</h2>
+    <hr />
+    <form action = "#" method = "POST">
+        <div>
+            Name <input type = "text" name = "fn" autocomplete="off" >
+        </div>
+        <div>
+            Gender <input type = "radio" name = "g" value = "M"> MALE 
+            <input type = "radio" name = "g" value = "F">FEMALE
+        </div>
+        <div>
+            Date of birth <input type = "date" name = "dob">
+        </div>
+        <div>
+            Courses <input type = "checkbox" name = "course" value = "HTML"> HTML
+            <input type = "checkbox" name = "course" value = "Javascript"> Javascript
+            <input type = "checkbox" name = "course" value = "CSS"> CSS
+        </div>
+        <div>
+            Qualification 
+            <select name = "qualification">
+                <optgroup label="Bachelors Degree">
+                    <option value = "BTech">B.TECH</option>
+                    <option value = "BCA">BCA</option>
+                    <option value = "BSC">BSC</option>
+                </optgroup>
+                <optgroup label="Master Degree">
+                    <option value = "MCA">MCA</option>
+                    <option value = "MBA">MBA</option>
+                </optgroup>
+            </select>
+        </div>
+        <div>
+            <input type = "submit" value = "Submit">
+        </div>
+    </form>
+</body>
+</html>
