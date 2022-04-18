@@ -1,0 +1,22 @@
+p { 
+    color : blue;
+}
+
+p.c1 {
+    color : red;
+}
+
+p.c2 {
+    color: green;
+}
+
+h1.c1 {
+    color : blueviolet
+}
+
+h2.c2 {
+    color : brown
+}
+#i1 {
+    background-color: yellow;
+}
