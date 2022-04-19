@@ -1,0 +1,23 @@
+div { 
+    display: inline-block; margin: 100px;
+}
+.circle {
+    width: 100px; height: 100px; border: dashed 3px black; 
+    animation: change 5s alternate infinite;
+}
+.box {
+    width: 100px; height: 100px; border: dashed 3px black;
+    animation: roll 3s infinite alternate;
+}
+@keyframes roll {
+    0% {transform: rotate(0deg);}    
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes change {
+    0% {background-color: yellow; border-radius: 0 0 0 0;}
+    25% {background-color: yellowgreen; border-radius: 50% 0 0 0;}
+    50% {background-color: greenyellow; border-radius: 50% 50% 0 0;}
+    75% {background-color: blueviolet; border-radius: 50% 50% 50% 0;}
+    100% {background-color: blue; border-radius: 50% 50% 50% 50%;}
+}

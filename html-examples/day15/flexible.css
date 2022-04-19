@@ -1,0 +1,19 @@
+.container { 
+    display: flex;
+}
+.container > div { 
+    padding: 5px;
+}
+.item1 { 
+    background-color: coral;
+    border: 2px solid black;
+    flex-grow: 1;
+}
+.item2 { 
+    background-color: blueviolet;
+    border: 2px solid black;
+}
+.item3 { 
+    background-color: green;
+    border: 2px solid black;
+}
