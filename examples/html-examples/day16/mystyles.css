@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 25px;
+    row-gap: 40px;
+}
+.grid-item {
+    border: solid 2px black;
+    padding: 20px;
+    text-align: center;
+}
+.gallery {
+    width: 50px;
+    height: 50px;
+}
