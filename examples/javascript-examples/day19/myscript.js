@@ -1,22 +1,23 @@
-var counter = 0;
-function hello(msg) {
-    // access div:main
-    var ele = document.getElementById('main');
-    ele.innerHTML = '<h3>'+msg+'</h3>';
-}
-// c recieves red or green or blue
-function change(c) {
-    var ele = document.getElementById('main');
-    ele.style.color = c;
-}
-function demo() {
-    if(counter > 6) {
-        counter = 0;
-    }
-    console.log('counter = '+counter);
-    var colors = ["red", "green", "violet", "blue", "orange", "brown"];
-    var ele = document.getElementById('main');
-    ele.style.color = colors[counter];
-    counter++;
+function test() {
+   let fruits = ['apple', 'grapes', 'orange', 'mango'];
+   let ele = document.getElementById('main');
+   let content = '<ul>';
+   // for loop can be used to iterate array
+   for(let index = 0; index < fruits.length; index++) {
+    console.log(fruits[index]); // index = 4, 4 < 4, fruits[3], index++
+    content = content +  "<li>"+fruits[index]+"</li>";
+   } 
+   ele.innerHTML = content+'</ul>';
+   let a = 0;
+   while(a < 0) {
+    console.log("a = "+a+" < 5");
+    a++;
+   }
+   let b = 0;
+   do {
+    console.log('b = '+b+' < 0');
+    b++;
+   } while(b < 0);
+
 }
 
