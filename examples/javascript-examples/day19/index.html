@@ -7,9 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <script type = 'text/javascript' src = "myscript.js"></script>
-    
-    <button onclick="test()">My Button</button>
     <div id = "main"></div>
+    
+    <script type = "text/javascript">
+        function test(a, b, ...c) {
+            document.write(`<p>a = ${a}, b = ${b}, c = ${c}</p>`);
+        }
+        function add(a, ...b) {
+            document.write(`<p>a = ${a}, b = ${b}</p>`)
+        }
+        add(10, 20);
+        add(20, 40, 60, 80);
+        add(500);
+        let arr = [40, 20, 10, 15];
+        test(arr); // a = 40, 20, 10, 15
+        test(...arr); // spreads to multiple parameters based on the values
+    </script>
 </body>
 </html>
