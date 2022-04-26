@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Learning Javascript</h2>
+    </div>
+    <div id = "main"></div>
+    <script type = "text/javascript">
+       class Employee { 
+           constructor(name, age, salary) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+           }
+           print() {
+            document.write(`<p>Name = ${this.name}, Age = ${this.age}, Salary = ${this.salary}</p>`);
+           }
+       }
+       let e1 = new Employee("Raj", 35, 40000); // e1 {name: Raj, age : 35, salary: 40000}
+       let e2 = new Employee("Vijay", 40, 20000); // e2 {name: Vijay, age: 40, salary: 20000}
+       e1.print();
+       e2.print();
+    </script>
+</body>
+</html>
