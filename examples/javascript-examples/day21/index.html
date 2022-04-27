@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Learning Javascript</h1>
+    <script type = 'text/javascript'>
+      let d1 = new Date();
+      let d2 = new Date(1998, 10, 20);
+      document.write(`<h3>Date1: ${d1}</h3>`);
+      document.write(`<h3>Date2: ${d2}</h3>`);
+      document.write(`<h3>Date: ${d2.toLocaleDateString()} </h3>`);
+      document.write(`<h3>Year: ${d2.getFullYear()}</h3>`);
+      document.write(`<h3>Month: ${d2.getMonth()}</h3>`);
+      document.write(`<h3>Date1: ${d1.toLocaleDateString()} </h3>`);
+      document.write(`<h3>Year1: ${d1.getFullYear()}</h3>`);
+      document.write(`<h3>Month1: ${d1.getMonth()}</h3>`);
+      d1.setFullYear(d1.getFullYear() + 1);
+      document.write(`<h3>Year1: ${d1.getFullYear()}</h3>`);
+    </script>
+</body>
+</html>
