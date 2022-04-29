@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class = "c1">Hello div1</div>
+    <div class = "c1">Hello div2</div>
+    <div class = "c1">Hello div3</div>
+    <button onclick = "test()">Click</button>
+    <script type = 'text/javascript'>
+        function test() {
+            //querySelector to select only one element
+            let ele = document.querySelector('.c1');
+            console.log(ele);
+            //querySelectorAll to select all the elements matching to the selector
+            let ele2 = document.querySelectorAll('.c1');
+            console.log(ele2);
+            ele2.forEach((n, i) => {
+                n.innerHTML = `This is a ${n.tagName} appears at position ${i + 1} in the DOM`;
+            });
+        }
+    </script>
+</body>
+</html>
