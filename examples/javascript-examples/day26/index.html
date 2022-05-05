@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript Examples</h1>
+   
+    <script type = "text/javascript">
+        class Person { 
+            constructor(name) {
+                this.name = name;
+            }
+            display() {
+                document.write(`<h2>Person Name = ${this.name}</h2>`);
+            }
+        }
+        class Employee extends Person {
+            constructor(name, salary) {
+                super(name); 
+                this.salary = salary;
+            }
+            display() {
+                document.write(`<h2>Employee Name = ${this.name}, Salary = ${this.salary}</h2>`)
+            }
+        }
+        // a function that can take any object i.e., Person or Employee
+        function test(u) { 
+            u.display();   // display() invocation is determined based on the object you supply to test
+        }
+        let p = new Person("Vijay");
+        let e = new Employee('Raj', 35000);
+        test(p);
+        test(e);
+        
+    </script>
+</body>
+</html>
