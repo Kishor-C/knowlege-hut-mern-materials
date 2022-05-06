@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Example on Canvas</h2>
+    <canvas id = 'c1' width = "400" height="400" style = 'border:solid 2px'></canvas>
+    <script type = 'text/javascript'>
+        // accessing canvas element
+        let c = document.getElementById('c1');
+        // call getContext('2d') on the element which gives you inbuilt methods of canvas
+        let ctx = c.getContext('2d');
+        ctx.fillStyle = 'orange';
+        ctx.strokeStyle = 'blue';
+        ctx.fillRect(0, 0, 50, 50);
+        ctx.strokeRect(50, 50, 50, 50);
+        
+        let r = 100;
+        let colors = ['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'white'];
+        for(let i = 0; i < colors.length; i++) {
+            ctx.beginPath();
+            ctx.arc(300, 300, r, 0, Math.PI, true);
+            ctx.fillStyle = colors[i];
+            ctx.fill();
+            ctx.stroke();
+            r = r - 10;
+        }
+    </script>
+</body>
+</html>
