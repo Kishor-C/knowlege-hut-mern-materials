@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'cartSize'>Cart size: </div>
+    <div id = "cart">Items: </div>
+    <script type = 'text/javascript'>
+        let products = ["Mobile", "Laptop", "Microwave", "Gyser"];
+        document.write(`<h3>${products}</h3>`);
+        products.sort();
+        document.write(`<h3>${products}</h3>`);
+        document.write("<ul>")
+        products.forEach((item, index) => {
+            document.write(`<li>${item} <button onClick = "test(${index})">Add ${item}</button></li>`)
+        });
+        document.write("</ul>");
+        let cartItems = [];
+        let cart = document.getElementById('cart');
+        let cartSize = document.getElementById('cartSize');
+        function test(index) {
+            let cartContent = "<ol>";
+            let item = products[index];
+            cartItems.push(item)
+            cart.innerHTML = `Items: [${cartItems}]`;
+            cartSize.innerHTML = `Cart size: ${cartItems.length}`;
+        }
+    </script>
+</body>
+</html>
