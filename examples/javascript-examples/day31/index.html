@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example on XMLHttpRequest</h1>
+    <button onclick="fetchData()">Fetch</button>
+    <div id = "main"></div>
+    <script type = 'text/javascript'>
+        function fetchData() {
+            let url = "https://jsonplaceholder.typicode.com/users";
+            let xhr = new XMLHttpRequest();
+            let ele = document.getElementById('main');
+            xhr.open("GET", url, true);
+            xhr.send();
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState == 4) {
+                    let data = xhr.responseText;
+                    let temp = "";
+                    let jsData = JSON.parse(data); //converts JSON to JS
+                    jsData.forEach((item) => {
+                        temp = `${temp} <p>Hello ${item.name}, your id is ${item.id}</p>`
+                    });
+                    ele.innerHTML = temp;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
