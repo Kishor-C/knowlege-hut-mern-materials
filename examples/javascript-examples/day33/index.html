@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'main'>Processing....</div>
+    <script type = 'text/javascript'>
+        let pr = new Promise(function(success, error) { 
+            // you are making call to the server
+            let a = -1; 
+            if(a == 1) {
+                success('we got success response');
+                // create another promise if you want another callback
+            } else {
+                error('we got error response')
+            }
+        });
+        // promise object provides then() & catch() function which takes callback again
+        // the callback in then is called on promise success 
+        // the callback in catch is called on promise failure
+        let ele = document.getElementById('main');
+        pr.then(function(s) { 
+            ele.innerHTML = s;
+        }).catch(function(e) {
+            ele.innerHTML = e;
+        });
+    </script>
+</body>
+</html>
