@@ -1,0 +1,7 @@
+- Promises
+- Async & Await
+- Component life cycle 
+- React hooks - useEffect
+- createRef
+- Controlled Components & Uncontrolled Components
+- Fragments, onset
