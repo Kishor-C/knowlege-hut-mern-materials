@@ -33,5 +33,58 @@ app.get("/user", (request, response) => {
             });
         }
     });
-    
+});
+// storing the records /user
+app.post("/user", (request, response) => {
+    mongoClient.connect(dbUrl, {useNewUrlParser:true}, (err, client) => {
+        if(err) throw err;
+        let data = request.body;
+        let db = client.db("mydb");
+        db.collection("user").insertOne(data, (err, res) => {
+            client.close();
+            if(err) {
+                response.status(404).json({"message":"User failed to store"});
+            }
+            else {
+                response.status(201).json(res);
+            } 
+        });
+    });
+});
+// getting the user by id
+app.get("/user/:id",(req,res)=>{
+    mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
+        if(err) throw err;
+        let id = parseInt(req.params.id);
+        let db = client.db('mydb');
+        let document=db.collection("user").find({_id:id});
+        let user=undefined;
+        document.forEach((doc,err)=>{
+            if(err)throw err;
+            user = doc;
+        },()=>{
+            client.close();
+            if(user == undefined){
+                res.json({msg:`User with id ${id} not found !!`});
+            }else{
+                res.json(user);
+            }
+        })
+    })
+});
+// updating the user age by id
+app.put("/user/:id/:age", (request, response) => {
+    let id = parseInt(request.params.id);
+    let age1 = parseInt(request.params.age);
+    mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
+        if(err) throw err;
+        else {
+            let db = client.db("mydb");
+            db.collection("user").updateOne({_id:id}, {$set:{age:age1}}, (err, res) => {
+                client.close();
+                if(err) throw err;
+                response.json(res);
+            });
+        }
+    });
 });
