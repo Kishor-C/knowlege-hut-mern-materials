@@ -88,3 +88,20 @@ app.put("/user/:id/:age", (request, response) => {
         }
     });
 });
+
+// delete user by id
+app.delete("/user/:id", (request, response) => {
+    let id = parseInt(request.params.id);
+    
+    mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
+        if(err) throw err;
+        else {
+            let db = client.db("mydb");
+            db.collection("user").deleteOne({_id:id}, (err, res) => {
+                client.close();
+                if(err) throw err;
+                response.json(res);
+            });
+        }
+    });
+});
