@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { StoreUser } from './User';
+import { StoreUser, FetchUsers } from './User';
 
 function App() {
   return (
@@ -9,6 +9,9 @@ function App() {
       <div className = 'row'>
         <div className = 'col-5'>
           <StoreUser />
+        </div>
+        <div className = 'col-5'>
+          <FetchUsers />
         </div>
       </div>
     </div>

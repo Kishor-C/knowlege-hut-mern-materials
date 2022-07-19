@@ -1,6 +1,36 @@
 import axios from "axios";
 import {useState} from 'react';
 
+// fetch all user component
+export function FetchUsers() {
+    let [users, setUsers] = useState([]);
+    let handleClick = () => {
+        let url = "http://localhost:3001/user";
+        axios.get(url)
+        .then(response => setUsers(response.data))
+        .catch(error => console.log(error));
+    }
+    return (<div>
+        <h3>List of Users</h3>
+        <button className = 'btn btn-primary' onClick = {handleClick}>Refresh</button>
+        <table className = 'table'>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Name</th><th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    users.map((item, index) => {
+                        return <tr key = {index}>
+                            <td>{item._id}</td><td>{item.name}</td><td>{item.age}</td>
+                        </tr>
+                    })
+                }
+            </tbody>
+        </table>
+    </div>)
+}
 export function StoreUser() {
     let [_id, setId] = useState('');
     let [name, setName] = useState('');
@@ -44,7 +74,7 @@ export function StoreUser() {
                 <input type = "submit" value = "Register" className = "btn btn-primary"></input>
             </div>
         </form>
-        <div className = 'alert alert-primary'>
+        <div className = 'text-primary'>
             {message}
         </div>
     </div>)
