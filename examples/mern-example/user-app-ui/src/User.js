@@ -16,7 +16,7 @@ export function FetchUsers() {
         <table className = 'table'>
             <thead>
                 <tr>
-                    <th>ID</th><th>Name</th><th>Age</th>
+                    <th>ID</th><th>Name</th><th>Age</th><th>X</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +24,7 @@ export function FetchUsers() {
                     users.map((item, index) => {
                         return <tr key = {index}>
                             <td>{item._id}</td><td>{item.name}</td><td>{item.age}</td>
+                            <td><button className = 'btn btn-danger'>Delete</button></td>
                         </tr>
                     })
                 }
