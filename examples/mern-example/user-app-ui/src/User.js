@@ -26,11 +26,11 @@ export function FetchUsers() {
         .then(response => setUsers(response.data))
         .catch(error => console.log(error));
     }
-    handleClick();
+    
    
     return (<div>
         <h3>List of Users</h3>
-        
+        <button className = 'btn btn-primary' onClick = {handleClick}>Refresh</button>
         <table className = 'table'>
             <thead>
                 <tr>
@@ -59,6 +59,7 @@ export function StoreUser() {
     let handleSubmit = (e) => {
         e.preventDefault();
         let url = "http://localhost:3001/user";
+        
         axios.post(url, {"_id":parseInt(_id), "name":name, "age":age})
         .then((response) => setMessage(response.data.insertedId + ' stored'))
         .catch((error) => setMessage('Sorry user failed to store'));
