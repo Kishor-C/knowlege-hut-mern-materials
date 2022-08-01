@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Understanding promises</h2>
+    <script type = "text/javascript">
+        async function demo() {
+            let p = new Promise( (resolve, reject) => {
+                // you may resolve the promise if success  or 
+                // you may reject the promise if error
+                let r = Math.random();
+                if(r >= 0.5) {
+                    resolve("Some resolved response");
+                } else {
+                    reject("Some rejected response");
+                } 
+            });
+            //p.then(d => console.log(d)).catch(e => console.log(e));
+            let result = await p;
+            console.log(result);
+        }
+        demo();
+    </script>
+</body>
+</html>
